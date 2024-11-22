@@ -3,7 +3,7 @@
 ## Introduction
 Welcome to the Agricultural Climate Risk Modeling Hackathon! This challenge focuses on leveraging AI/ML techniques to develop sustainable agricultural solutions through climate risk modeling. We aim to help farmers and agricultural stakeholders make informed decisions by predicting and categorizing climate-related risks at the taluk (sub-district) level.
 
-Our focus spans across India's two main agricultural seasons:
+Quick overview of Rabi and Kharif seasons
 
 - **Kharif Season (June-November)**:
   - Main cropping season during the south-west monsoon
@@ -17,21 +17,23 @@ Our focus spans across India's two main agricultural seasons:
 
 ## Problem Statement
 The challenge is to develop a predictive model that:
-1. Forecasts climatic parameters at the taluk level using historical data
+1. Forecasts climatic parameters(mentioned in Dataset Description Section) at the taluk level using historical data
 2. Assigns risk categories for each parameter
-3. Creates an overall risk assessment for each taluk for Kharif 2024 (August, September, October, November)
+3. Create an overall risk assessment for each taluk at month level for Kharif 2024 (August, September, October, November)
+
 
 ### Risk Categories
-Participants need to define appropriate ranges for these risk levels:
+Participants need to come up with appropriate ranges for these risk levels:
 - Individual Parameters: Low, Medium, High, Very High
 - Overall Taluk Risk: Low, Medium, High
 
 ## Dataset Description
+All the following parameters are captured from 2019 to 2024 May.
 
 ### 1. Rainfall Data
- Rainfall is the amount of precipitation that falls in a specific area, directly affecting soil moisture, crop growth, and overall water availability for agriculture. We will consider average rainfall in mm for 30 days at Taluk level. 
+ Rainfall is the amount of precipitation that falls in a specific area, directly affecting soil moisture, crop growth, and overall water availability for agriculture. We will consider average rainfall in mm at each day, Taluk level.
 
-| region_id      | year | month | day | monthly_sum |
+| region_id      | year | month | day | daily_sum |
 |----------------|------|-------|-----|-------------|
 | 91020002001000 | 2019 | 1     | 1   | 0.0        |
 | 91020002002000 | 2019 | 1     | 1   | 0.0        |
@@ -39,10 +41,10 @@ Participants need to define appropriate ranges for these risk levels:
 
 **Features**:
 - `region_id`: Unique identifier for taluk
-- `monthly_sum`: Average rainfall in mm for 30 days at Taluk level
+- `daily_sum`: Average rainfall in mm for each day at Taluk level
 
 ### 2. Land Surface Temperature (LST)
-is the temperature in degree Celsius of the Earth's surface as measured from satellites. It indicates how hot or cold the land is at a given time and is important for understanding weather, climate, and environmental conditions. LST helps in monitoring changes in vegetation, water availability, and heat patterns in urban areas.
+is the temperature in degree Celsius of the Earth's surface as measured from satellites. It indicates how hot or cold the land is at a given time and is important for understanding weather, climate, and environmental conditions. LST helps in monitoring changes in vegetation, water availability, and heat patterns in urban areas. For this parameter data availabilty starts from 2019 May.
 
 
 | region_id      | year | month | day | daily_avg |
