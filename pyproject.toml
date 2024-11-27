@@ -3,7 +3,7 @@ name = "ingarss-workshop-2024"
 version = "0.1.0"
 description = "InGARSS 2024 Workshop - Development Seed & SatSure"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.11,<3.12"
 dependencies = [
     "adlfs>=2024.7.0",
     "dask>=2024.11.2",
