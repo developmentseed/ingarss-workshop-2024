@@ -1,15 +1,15 @@
 # InGARSS Workshop 2024
 
-Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a collection of Jupyter notebooks designed to guide you through .
+Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a collection of Jupyter notebooks designed to guide you through.
 
 ## Table of Contents
 
 - [Getting Started](#getting-started)
 - [Tutorial Notebooks](#tutorial-notebooks)
-  - [Notebook 1: Setup](#setup)
-  - [Notebook 2: STAC & Zarr](#stac-and-zarr)
-  - [Notebook 3: Dynamic Visualization](#dynamic-visualization)
-  - [Notebook 4: Raster & Vector](#raster-and-vector)
+  - [Notebook 1: Setup](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/00_setup.ipynb)
+  - [Notebook 2: STAC & Zarr](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/01_stac_and_zarr.ipynb)
+  - [Notebook 3: Dynamic Visualization](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/02_dynamic_visualization.ipynb)
+  - [Notebook 4: Raster & Vector](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/03_raster_and_vector.ipynb)
 - [Repository Structure](#repository-structure)
 - [Contributing](#contributing)
 - [License](#license)
@@ -18,7 +18,7 @@ Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a
 
 To get started with the tutorials, you can run the notebooks directly in Google Colab, which allows you to execute code without any local setup.
 
-**OR
+**OR**
 
 You can also run the notebooks locally, but you will need to install the dependencies and set up a Python environment. We recommend using [uv](https://docs.astral.sh/uv/) to manage the Python environment.
 
@@ -44,13 +44,13 @@ Downloads the data into your Google Drive to be used in the other notebooks.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/01_stac_and_zarr.ipynb)
 
-Learn about Cloud Native Geospatial Data Formats, we will look into STAC and Zarr by using ERA5 air temperature data.
+Learn about Cloud Native Geospatial Data Formats; we will look into STAC and Zarr by using ERA5 air temperature data.
 
 ### Notebook 3: Dynamic Visualization
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/02_dynamic_visualization.ipynb)
 
-Learn to analyse & visualize time-series data using xarray and lonboard.
+Learn to analyze & visualize time-series data using xarray and lonboard.
 
 ### Notebook 4: Raster & Vector
 
