@@ -1,7 +1,5 @@
 # InGARSS Workshop 2024
 
-# InGARSS Workshop 2024
-
 Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a collection of Jupyter notebooks designed to guide you through .
 
 ## Table of Contents
