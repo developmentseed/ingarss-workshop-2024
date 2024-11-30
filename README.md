@@ -6,10 +6,10 @@ Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a
 
 - [Getting Started](#getting-started)
 - [Tutorial Notebooks](#tutorial-notebooks)
-  - [Notebook 1: Setup](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/00_setup.ipynb)
-  - [Notebook 2: STAC & Zarr](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/01_stac_and_zarr.ipynb)
-  - [Notebook 3: Dynamic Visualization](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/02_dynamic_visualization.ipynb)
-  - [Notebook 4: Raster & Vector](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/03_raster_and_vector.ipynb)
+  - [Notebook 1: Setup](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/00_setup.ipynb)
+  - [Notebook 2: STAC & Zarr](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/01_stac_and_zarr.ipynb)
+  - [Notebook 3: Dynamic Visualization](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/02_dynamic_visualization.ipynb)
+  - [Notebook 4: Raster & Vector](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/03_raster_and_vector.ipynb)
 - [Repository Structure](#repository-structure)
 - [Contributing](#contributing)
 - [License](#license)
@@ -36,25 +36,25 @@ uv run jupyter lab
 
 ### Notebook 1: Setup
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/00_setup.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/00_setup.ipynb)
 
 Downloads the data into your Google Drive to be used in the other notebooks.
 
 ### Notebook 2: STAC & Zarr
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/01_stac_and_zarr.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/01_stac_and_zarr.ipynb)
 
 Learn about Cloud Native Geospatial Data Formats; we will look into STAC and Zarr by using ERA5 air temperature data.
 
 ### Notebook 3: Dynamic Visualization
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/02_dynamic_visualization.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/02_dynamic_visualization.ipynb)
 
 Learn to analyze & visualize time-series data using xarray and lonboard.
 
 ### Notebook 4: Raster & Vector
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/colab-setup/book/docs/03_raster_and_vector.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/03_raster_and_vector.ipynb)
 
 Learn about STAC & Cloud Optimized GeoTIFFs.
 
