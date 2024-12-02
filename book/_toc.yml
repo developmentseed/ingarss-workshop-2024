@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Tutorials
+    chapters:
+      - file: docs/00_setup.ipynb
+      - file: docs/01_stac_and_zarr.ipynb
+      - file: docs/02_dynamic_visualization.ipynb
+      - file: docs/03_raster_and_vector.ipynb    
