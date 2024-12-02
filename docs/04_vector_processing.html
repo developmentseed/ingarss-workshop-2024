@@ -1,0 +1,1014 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Setup &#8212; InGARSS Scaling Science Workshop 2024</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/04_vector_processing';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="InGARSS Scaling Science Workshop 2024 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="InGARSS Scaling Science Workshop 2024 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    InGARSS Scaling Science Workshop 2024
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_setup.html">Setup for InGARSS 2024 workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_stac_and_zarr.html">Exploring Cloud Native Geospatial Data Formats with ERA5 Reanalysis Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_dynamic_visualization.html">Analyzing Agricultural Fields and Temperature Patterns in India using Lonboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_raster_and_vector.html">Efficiently Selecting and Processing Raster and Vector Data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024-main/blob/main/book/docs/04_vector_processing.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main/edit/main/book/docs/04_vector_processing.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main/issues/new?title=Issue%20on%20page%20%2Fdocs/04_vector_processing.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/04_vector_processing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setup</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-geospatial-data">Importing geospatial data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-geodataframe">What’s a GeoDataFrame?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geometries-points-linestrings-and-polygons">Geometries: Points, Linestrings and Polygons</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shapely-library">The <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-relationships">Spatial relationships</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships-between-individual-objects">Relationships between individual objects</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-join-operation">Spatial join operation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-operations">Spatial operations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unary-union-and-dissolve">Unary union and dissolve</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><font size="6"><b> Geospatial Vector Data in Python</b></font></p>
+<p><strong>Main Objectives</strong></p>
+<ul class="simple">
+<li><p>Importing vector data using geopandas</p></li>
+<li><p>Visualising vector data</p></li>
+<li><p>Introduction to GeoDataFrame</p></li>
+<li><p>Different types of geometries</p></li>
+<li><p>Spatial relationships</p></li>
+<li><p>Spatial operations</p></li>
+</ul>
+<section id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">google.colab</span>
+    <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+    <span class="c1"># Mount drive to access data</span>
+    <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+    <span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">uv</span>
+    <span class="err">!</span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">system</span> \
+        <span class="s2">&quot;adlfs&gt;=2024.7.0&quot;</span> \
+        <span class="s2">&quot;dask&gt;=2024.11.2&quot;</span> \
+        <span class="s2">&quot;fsspec&gt;=2024.10.0&quot;</span> \
+        <span class="s2">&quot;geopandas&gt;=1.0.1&quot;</span> \
+        <span class="s2">&quot;lonboard&gt;=0.10.3&quot;</span> \
+        <span class="s2">&quot;matplotlib&gt;=3.9.2&quot;</span> \
+        <span class="s2">&quot;planetary-computer&gt;=1.0.0&quot;</span> \
+        <span class="s2">&quot;pyarrow&gt;=18.0.0&quot;</span> \
+        <span class="s2">&quot;pystac-client&gt;=0.8.5&quot;</span> \
+        <span class="s2">&quot;xarray&gt;=2024.11.0&quot;</span> \
+        <span class="s2">&quot;zarr&gt;=2.18.3&quot;</span> \
+        <span class="s2">&quot;odc-stac&gt;=0.3.10&quot;</span> \
+        <span class="s2">&quot;rasterio&gt;=1.4.2&quot;</span> \
+        <span class="s2">&quot;rioxarray&gt;=0.18.1&quot;</span> \
+        <span class="s2">&quot;rasterstats&gt;=0.20.0&quot;</span> \
+        <span class="s2">&quot;numpy&gt;=2.1.3&quot;</span>
+
+    <span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/ingarss_workshop_2024&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Environment activated and data ready!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 219 µs, sys: 107 µs, total: 326 µs
+Wall time: 332 µs
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importing-geospatial-data">
+<h1>Importing geospatial data<a class="headerlink" href="#importing-geospatial-data" title="Link to this heading">#</a></h1>
+<p>Geospatial data is often available from specific GIS file formats or data stores, like ESRI shapefiles, GeoJSON files, geopackage files, PostGIS (PostgreSQL) database, …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/karnataka_district/KA_subdistrict.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">state</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/karnataka_district/KA_subdistrict.shp&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;geopandas&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install folium matplotlib mapclassify</span>
+<span class="n">state</span><span class="o">.</span><span class="n">explore</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What do we observe:</p>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">.head()</span></code> we can see the first rows of the dataset, just like we can do with Pandas.</p></li>
+<li><p>There is a <code class="docutils literal notranslate"><span class="pre">geometry</span></code> column and the different countries are represented as polygons</p></li>
+<li><p>We can use the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> (matplotlib) or <code class="docutils literal notranslate"><span class="pre">explore()</span></code> (Folium / Leaflet.js) method to quickly get a <em>basic</em> visualization of the data</p></li>
+</ul>
+</section>
+<section id="what-s-a-geodataframe">
+<h1>What’s a GeoDataFrame?<a class="headerlink" href="#what-s-a-geodataframe" title="Link to this heading">#</a></h1>
+<p>We used the GeoPandas library to read in the geospatial data, and this returned us a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A GeoDataFrame contains a tabular, geospatial dataset:</p>
+<ul class="simple">
+<li><p>It has a <strong>‘geometry’ column</strong> that holds the geometry information (or features in GeoJSON).</p></li>
+<li><p>The other columns are the <strong>attributes</strong> (or properties in GeoJSON) that describe each of the geometries</p></li>
+</ul>
+<p>Such a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> is just like a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, but with some additional functionality for working with geospatial data:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">.geometry</span></code> attribute that always returns the column with the geometry information (returning a GeoSeries). The column name itself does not necessarily need to be ‘geometry’, but it will always be accessible as the <code class="docutils literal notranslate"><span class="pre">.geometry</span></code> attribute.</p></li>
+<li><p>It has some extra methods for working with spatial data (area, distance, buffer, intersection, …), which we will learn in later notebooks</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.</span><span class="n">geometry</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>It’s still a DataFrame</strong>, so we have all the Pandas functionality available to use on the geospatial dataset, and to do data manipulations with the attributes and geometry information together.</p>
+<p>Or, we can use boolean filtering to select a subset of the dataframe based on a condition:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">district</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;district&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Dharwad&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">district</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>The rest of the tutorial is going to assume you already know some pandas basics, but we will try to give hints for that part for those that are not familiar.<br />
+A few resources in case you want to learn more about pandas:</p>
+<ul class="simple">
+<li><p>Pandas docs: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/10min.html">https://pandas.pydata.org/pandas-docs/stable/10min.html</a></p></li>
+<li><p>Other tutorials: chapter from pandas in <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">https://jakevdp.github.io/PythonDataScienceHandbook/</a>, <a class="github reference external" href="https://github.com/jorisvandenbossche/pandas-tutorial">jorisvandenbossche/pandas-tutorial</a>, <a class="github reference external" href="https://github.com/TomAugspurger/pandas-head-to-tail">TomAugspurger/pandas-head-to-tail</a>, …</p></li>
+</ul>
+<div class="alert alert-info" style="font-size:120%">
+<p>⚛ <strong>REMEMBER:</strong> <br></p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> allows to perform typical tabular data analysis together with spatial operations</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> (or <em>Feature Collection</em>) consists of:</p>
+<ul>
+<li><p><strong>Geometries</strong> or <strong>features</strong>: the spatial objects</p></li>
+<li><p><strong>Attributes</strong> or <strong>properties</strong>: columns with information about each spatial object</p></li>
+</ul>
+</li>
+</ul>
+</div></section>
+<section id="geometries-points-linestrings-and-polygons">
+<h1>Geometries: Points, Linestrings and Polygons<a class="headerlink" href="#geometries-points-linestrings-and-polygons" title="Link to this heading">#</a></h1>
+<p>Spatial <strong>vector</strong> data can consist of different types, and the 3 fundamental types are:</p>
+<p><img alt="" src="docs/img/simple_features_3_text.svg" /></p>
+<ul class="simple">
+<li><p><strong>Point</strong> data: represents a single point in space.</p></li>
+<li><p><strong>Line</strong> data (“LineString”): represents a sequence of points that form a line.</p></li>
+<li><p><strong>Polygon</strong> data: represents a filled area.</p></li>
+</ul>
+<p>And each of them can also be combined in multi-part geometries (See <a class="reference external" href="https://shapely.readthedocs.io/en/stable/manual.html#geometric-objects">https://shapely.readthedocs.io/en/stable/manual.html#geometric-objects</a> for extensive overview).</p>
+<p>For the example we have seen up to now, the individual geometry objects are Polygons:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">geometry</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="the-shapely-library">
+<h2>The <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library<a class="headerlink" href="#the-shapely-library" title="Link to this heading">#</a></h2>
+<p>The individual geometry objects are provided by the <a class="reference external" href="https://shapely.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">shapely</span></code></a> library</p>
+<p>To construct one ourselves:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">,</span> <span class="n">LineString</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span><span class="o">.</span><span class="n">area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info" style="font-size:120%">
+<p><strong>REMEMBER</strong>: <br></p>
+<p>Single geometries are represented by <code class="docutils literal notranslate"><span class="pre">shapely</span></code> objects:</p>
+<ul class="simple">
+<li><p>If you access a single geometry of a GeoDataFrame, you get a shapely geometry object</p></li>
+<li><p>Those objects have similar functionality as geopandas objects (GeoDataFrame/GeoSeries). For example:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">single_shapely_object.distance(other_point)</span></code> -&gt; distance between two points</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geodataframe.distance(other_point)</span></code> -&gt;  distance for each point in the geodataframe to the other point</p></li>
+</ul>
+</li>
+</ul>
+</div></section>
+</section>
+<section id="spatial-relationships">
+<h1>Spatial relationships<a class="headerlink" href="#spatial-relationships" title="Link to this heading">#</a></h1>
+<p>An important aspect of geospatial data is that we can look at <em>spatial relationships</em>: how two spatial objects relate to each other (whether they overlap, intersect, contain, .. one another).</p>
+<p>The topological, set-theoretic relationships in GIS are typically based on the DE-9IM model. See <a class="reference external" href="https://en.wikipedia.org/wiki/Spatial_relation">https://en.wikipedia.org/wiki/Spatial_relation</a> for more information.
+<img alt="spatial_relationships.png" src="data:image/png;base64,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" />
+(Image by <a class="reference external" href="https://en.wikipedia.org/wiki/Spatial_relation#/media/File:TopologicSpatialRelarions2.png">Krauss, CC BY-SA 3.0</a></p>
+<section id="relationships-between-individual-objects">
+<h2>Relationships between individual objects<a class="headerlink" href="#relationships-between-individual-objects" title="Link to this heading">#</a></h2>
+<p>Let’s first create some small toy spatial objects:</p>
+<p>A polygon <small>(note: we use <code class="docutils literal notranslate"><span class="pre">.item()</span></code> here to to extract the scalar geometry object from the GeoSeries of length 1)</small>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bagalkot</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;district&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bagalkot&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]</span>
+<span class="n">dharwad</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;district&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Dharwad&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adding two points</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bagalkot_centroid</span> <span class="o">=</span> <span class="n">bagalkot</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span><span class="o">.</span><span class="n">centroid</span> <span class="c1"># I will explain union_all later</span>
+<span class="n">dharwad_centroid</span> <span class="o">=</span> <span class="n">dharwad</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span><span class="o">.</span><span class="n">centroid</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And a linestring</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">LineString</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">LineString</span><span class="p">([</span><span class="n">bagalkot_centroid</span><span class="p">,</span> <span class="n">dharwad_centroid</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s visualize those geometry objects together:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geopandas</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">bagalkot_centroid</span><span class="p">,</span> <span class="n">dharwad_centroid</span><span class="p">,</span> <span class="n">line</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Centroid of Dharwad, is located within Dharwad. This is a spatial relationship, and we can test this using the individual shapely geometry objects as follow:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dharwad_centroid</span><span class="o">.</span><span class="n">within</span><span class="p">(</span><span class="n">dharwad</span><span class="o">.</span><span class="n">union_all</span><span class="p">())</span>
+
+<span class="c1">#dharwad_centroid.within(dharwad)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And using the reverse, Dharwad contains centroid point</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dharwad</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">dharwad_centroid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On the other hand, Bagalkot centroid is not located in Dharwad</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bagalkot_centroid</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">dharwad</span><span class="o">.</span><span class="n">union_all</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The straight line we draw from Dharward to Bagalkot is not fully located within Belgium, but it does intersect with it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dharwad</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">dharwad</span><span class="o">.</span><span class="n">union_all</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info" style="font-size:120%">
+<p><strong>REFERENCE</strong>:</p>
+<p>Overview of the different functions to check spatial relationships (<em>spatial predicate functions</em>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">equals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contains</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crosses</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disjoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intersects</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overlaps</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">touches</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">within</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">covers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">covered_by</span></code></p></li>
+</ul>
+<p>See <a class="reference external" href="https://shapely.readthedocs.io/en/stable/manual.html#predicates-and-relationships">https://shapely.readthedocs.io/en/stable/manual.html#predicates-and-relationships</a> for an overview of those methods.</p>
+<p>See <a class="reference external" href="https://en.wikipedia.org/wiki/DE-9IM">https://en.wikipedia.org/wiki/DE-9IM</a> for all details on the semantics of those operations.</p>
+</div></section>
+</section>
+<section id="spatial-join-operation">
+<h1>Spatial join operation<a class="headerlink" href="#spatial-join-operation" title="Link to this heading">#</a></h1>
+<div class="alert alert-info" style="font-size:120%">
+<p><strong>SPATIAL JOIN</strong> = <em>transferring attributes from one layer to another based on their spatial relationship</em> <br></p>
+<p>Different parts of this operations:</p>
+<ul class="simple">
+<li><p>The GeoDataFrame to which we want add information</p></li>
+<li><p>The GeoDataFrame that contains the information we want to add</p></li>
+<li><p>The spatial relationship we want to use to match both datasets (‘intersects’, ‘contains’, ‘within’)</p></li>
+<li><p>The type of join: left or inner join</p></li>
+</ul>
+<p><img alt="" src="docs/img/illustration-spatial-join.svg" /></p>
+</div></section>
+<section class="tex2jax_ignore mathjax_ignore" id="spatial-operations">
+<h1>Spatial operations<a class="headerlink" href="#spatial-operations" title="Link to this heading">#</a></h1>
+<p>Next to the spatial predicates that return boolean values, Shapely and GeoPandas also provide operations that return new geometric objects.</p>
+<p><strong>Binary operations:</strong></p>
+<table><tr>
+<td> <img src="img/spatial-operations-base.png"/> </td>
+<td> <img src="img/spatial-operations-intersection.png"/> </td>
+</tr>
+<tr>
+<td> <img src="img/spatial-operations-union.png"/> </td>
+<td> <img src="img/spatial-operations-difference.png"/> </td>
+</tr></table>
+<p><strong>Buffer:</strong></p>
+<table><tr>
+<td> <img src="img/spatial-operations-buffer-point1.png"/> </td>
+<td> <img src="img/spatial-operations-buffer-point2.png"/> </td>
+</tr>
+<tr>
+<td> <img src="img/spatial-operations-buffer-line.png"/> </td>
+<td> <img src="img/spatial-operations-buffer-polygon.png"/> </td>
+</tr></table>
+<p>See <a class="reference external" href="https://shapely.readthedocs.io/en/stable/manual.html#spatial-analysis-methods">https://shapely.readthedocs.io/en/stable/manual.html#spatial-analysis-methods</a> for more details.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="unary-union-and-dissolve">
+<h1>Unary union and dissolve<a class="headerlink" href="#unary-union-and-dissolve" title="Link to this heading">#</a></h1>
+<p>Another useful method is the <code class="docutils literal notranslate"><span class="pre">unary_union</span></code> attribute, which converts the set of geometry objects in a GeoDataFrame into a single geometry object by taking the union of all those geometries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">KA</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">unary_union</span>
+<span class="n">KA</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">KA</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">districts</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">dissolve</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;district&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">districts</span> <span class="c1">#.iloc[0].geometry</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info" style="font-size:120%">
+<p><strong>REMEMBER</strong>:</p>
+<p>GeoPandas (and Shapely for the individual objects) provide a whole lot of basic methods to analyze the geospatial data (distance, length, centroid, boundary, convex_hull, simplify, transform, ….), much more than what we can touch in this tutorial.</p>
+<p>An overview of all methods provided by GeoPandas can be found here: <a class="reference external" href="https://geopandas.readthedocs.io/en/latest/docs/reference.html">https://geopandas.readthedocs.io/en/latest/docs/reference.html</a></p>
+</div></section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-geospatial-data">Importing geospatial data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-geodataframe">What’s a GeoDataFrame?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geometries-points-linestrings-and-polygons">Geometries: Points, Linestrings and Polygons</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shapely-library">The <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-relationships">Spatial relationships</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships-between-individual-objects">Relationships between individual objects</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-join-operation">Spatial join operation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-operations">Spatial operations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unary-union-and-dissolve">Unary union and dissolve</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Development Seed
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

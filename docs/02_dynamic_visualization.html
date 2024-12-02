@@ -1,0 +1,1300 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Analyzing Agricultural Fields and Temperature Patterns in India using Lonboard &#8212; InGARSS Scaling Science Workshop 2024</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/02_dynamic_visualization';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Efficiently Selecting and Processing Raster and Vector Data" href="03_raster_and_vector.html" />
+    <link rel="prev" title="Exploring Cloud Native Geospatial Data Formats with ERA5 Reanalysis Data" href="01_stac_and_zarr.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="InGARSS Scaling Science Workshop 2024 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="InGARSS Scaling Science Workshop 2024 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    InGARSS Scaling Science Workshop 2024
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_setup.html">Setup for InGARSS 2024 workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_stac_and_zarr.html">Exploring Cloud Native Geospatial Data Formats with ERA5 Reanalysis Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analyzing Agricultural Fields and Temperature Patterns in India using Lonboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_raster_and_vector.html">Efficiently Selecting and Processing Raster and Vector Data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024-main/blob/main/book/docs/02_dynamic_visualization.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main/edit/main/book/docs/02_dynamic_visualization.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main/issues/new?title=Issue%20on%20page%20%2Fdocs/02_dynamic_visualization.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/02_dynamic_visualization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analyzing Agricultural Fields and Temperature Patterns in India using Lonboard</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-visualizing-geospatial-data">1. Loading and Visualizing Geospatial Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-field-boundaries-and-district-shapefiles">Load Field Boundaries and District Shapefiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-dataframes">Inspect the DataFrames</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-districts-and-fields">Visualize the Districts and Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-to-field-boundaries-in-karnataka">Filter to field boundaries in Karnataka</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-temperature-data-from-era5-datasets">2. Extracting Temperature Data from ERA5 Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-era5-temperature-data">Load ERA5 Temperature Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-concatenate-era5-datasets">Load and Concatenate ERA5 Datasets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-dataset">Inspect the Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-and-saving-era5-data">3. Processing and Saving ERA5 Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample-data-to-daily-and-weekly-means">Resample Data to Daily and Weekly Means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-datasets-in-zarr-format">Save Datasets in Zarr Format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-time-series-for-field-centroids">4. Extracting Time Series for Field Centroids</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-function-to-extract-time-series">Define a Function to Extract Time Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-weekly-dataset">Load the Weekly Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-and-plot-time-series-for-a-single-field">Extract and Plot Time Series for a Single Field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-temperature-patterns-across-fields">5. Analyzing Temperature Patterns across fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-function-to-plot-time-series-for-multiple-fields">Define a Function to Plot Time Series for Multiple Fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lonboard-scalable-dynamic-visualization-on-maps">Lonboard - Scalable Dynamic Visualization on Maps</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analyzing-agricultural-fields-and-temperature-patterns-in-india-using-lonboard">
+<h1>Analyzing Agricultural Fields and Temperature Patterns in India using Lonboard<a class="headerlink" href="#analyzing-agricultural-fields-and-temperature-patterns-in-india-using-lonboard" title="Link to this heading">#</a></h1>
+<p><strong>Table of Contents</strong></p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#data-overview"><span class="xref myst">Data Overview</span></a></p></li>
+<li><p><a class="reference internal" href="#loading-and-visualizing-geospatial-data"><span class="xref myst">Loading and Visualizing Geospatial Data</span></a></p></li>
+<li><p><a class="reference internal" href="#extracting-temperature-data-from-era5-datasets"><span class="xref myst">Extracting Temperature Data from ERA5 Datasets</span></a></p></li>
+<li><p><a class="reference internal" href="#processing-and-saving-era5-data"><span class="xref myst">Processing and Saving ERA5 Data</span></a></p></li>
+<li><p><a class="reference internal" href="#extracting-time-series-for-field-centroids"><span class="xref myst">Extracting Time Series for Field Centroids</span></a></p></li>
+<li><p><a class="reference internal" href="#analyzing-temperature-patterns-across-districts"><span class="xref myst">Analyzing Temperature Patterns Across Districts</span></a></p></li>
+<li><p><a class="reference internal" href="#comparing-temperature-patterns-across-multiple-districts"><span class="xref myst">Comparing Temperature Patterns Across Multiple Districts</span></a></p></li>
+<li><p><a class="reference internal" href="#lonboard---scalable-dynamic-visualization-on-maps"><span class="xref myst">Lonboard - Scalable Dynamic Visualization on Maps</span></a></p></li>
+</ol>
+<p>This tutorial demonstrates how to work with geospatial data in Python to analyze agricultural fields and temperature patterns across different districts in India. We’ll use libraries like GeoPandas, Xarray, and Matplotlib to:</p>
+<ul class="simple">
+<li><p>Load and visualize field boundaries and district shapefiles.</p></li>
+<li><p>Extract temperature time series data from ERA5 datasets.</p></li>
+<li><p>Analyze and visualize temperature patterns across selected districts.</p></li>
+</ul>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">google.colab</span>
+    <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+    <span class="c1"># Mount drive to access data</span>
+    <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+    <span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">uv</span>
+    <span class="err">!</span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">system</span> \
+        <span class="s2">&quot;adlfs&gt;=2024.7.0&quot;</span> \
+        <span class="s2">&quot;dask&gt;=2024.11.2&quot;</span> \
+        <span class="s2">&quot;fsspec&gt;=2024.10.0&quot;</span> \
+        <span class="s2">&quot;geopandas&gt;=1.0.1&quot;</span> \
+        <span class="s2">&quot;lonboard&gt;=0.10.3&quot;</span> \
+        <span class="s2">&quot;matplotlib&gt;=3.9.2&quot;</span> \
+        <span class="s2">&quot;planetary-computer&gt;=1.0.0&quot;</span> \
+        <span class="s2">&quot;pyarrow&gt;=18.0.0&quot;</span> \
+        <span class="s2">&quot;pystac-client&gt;=0.8.5&quot;</span> \
+        <span class="s2">&quot;xarray&gt;=2024.11.0&quot;</span> \
+        <span class="s2">&quot;zarr&gt;=2.18.3&quot;</span> \
+        <span class="s2">&quot;odc-stac&gt;=0.3.10&quot;</span> \
+        <span class="s2">&quot;rasterio&gt;=1.4.2&quot;</span> \
+        <span class="s2">&quot;rioxarray&gt;=0.18.1&quot;</span> \
+        <span class="s2">&quot;rasterstats&gt;=0.20.0&quot;</span> \
+        <span class="s2">&quot;numpy&gt;=2.1.3&quot;</span>
+
+    <span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/ingarss_workshop_2024&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Environment activated and data ready!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 228 µs, sys: 92 µs, total: 320 µs
+Wall time: 326 µs
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Note: In Colab, restart the runtime after installing the packages to ensure all the packages are loaded.</p>
+</div></blockquote>
+</section>
+<section id="data-overview">
+<h2>Data Overview<a class="headerlink" href="#data-overview" title="Link to this heading">#</a></h2>
+<p>We’ll be working with:</p>
+<ul class="simple">
+<li><p>Shapefiles for field boundaries and districts in India.</p></li>
+<li><p>ERA5 temperature datasets from the Microsoft Planetary Computer.</p></li>
+</ul>
+<p>Make sure you have the necessary data files in your working directory:</p>
+<ul class="simple">
+<li><p>Field boundaries: data/india-crop-boundary/india_10k_fields.shp</p></li>
+<li><p>Karnataka districts: data/KA_subdistrict.shp</p></li>
+<li><p>Madhya Pradesh districts: data/MP_subdistrict/state_MADHYA PRADESH.shp</p></li>
+</ul>
+</section>
+<section id="loading-and-visualizing-geospatial-data">
+<h2>1. Loading and Visualizing Geospatial Data<a class="headerlink" href="#loading-and-visualizing-geospatial-data" title="Link to this heading">#</a></h2>
+<p>First, let’s import the required libraries and load the shapefiles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">planetary_computer</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">pystac_client</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="load-field-boundaries-and-district-shapefiles">
+<h3>Load Field Boundaries and District Shapefiles<a class="headerlink" href="#load-field-boundaries-and-district-shapefiles" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load field boundaries</span>
+<span class="n">fields_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/india_crop_boundary/india_10k_fields.shp&quot;</span><span class="p">)</span>
+
+<span class="c1"># Load district boundaries for Karnataka</span>
+<span class="n">karnataka_districts</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/karnataka_district/KA_subdistrict.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CPLE_OpenFailedError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
+<span class="nn">File fiona/ogrext.pyx:136,</span> in <span class="ni">fiona.ogrext.gdal_open_vector</span><span class="nt">()</span>
+
+<span class="nn">File fiona/_err.pyx:291,</span> in <span class="ni">fiona._err.exc_wrap_pointer</span><span class="nt">()</span>
+
+<span class="ne">CPLE_OpenFailedError</span>: data/india_crop_boundary/india_10k_fields.shp: No such file or directory
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">DriverError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Load field boundaries</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">fields_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/india_crop_boundary/india_10k_fields.shp&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Load district boundaries for Karnataka</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">karnataka_districts</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/karnataka_district/KA_subdistrict.shp&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.9.0/envs/py39b/lib/python3.9/site-packages/geopandas/io/file.py:297,</span> in <span class="ni">_read_file</span><span class="nt">(filename, bbox, mask, rows, engine, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="n">path_or_bytes</span> <span class="o">=</span> <span class="n">filename</span>
+<span class="ne">--&gt; </span><span class="mi">297</span>     <span class="k">return</span> <span class="n">_read_file_fiona</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="n">path_or_bytes</span><span class="p">,</span> <span class="n">from_bytes</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unknown engine &#39;</span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.9.0/envs/py39b/lib/python3.9/site-packages/geopandas/io/file.py:338,</span> in <span class="ni">_read_file_fiona</span><span class="nt">(path_or_bytes, from_bytes, bbox, mask, rows, where, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>     <span class="n">reader</span> <span class="o">=</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="k">with</span> <span class="n">fiona_env</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">338</span>     <span class="k">with</span> <span class="n">reader</span><span class="p">(</span><span class="n">path_or_bytes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">features</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>         <span class="n">crs</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">crs_wkt</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>         <span class="c1"># attempt to get EPSG code</span>
+
+<span class="nn">File ~/.pyenv/versions/3.9.0/envs/py39b/lib/python3.9/site-packages/fiona/env.py:457,</span> in <span class="ni">ensure_env_with_credentials.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="n">session</span> <span class="o">=</span> <span class="n">DummySession</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="k">with</span> <span class="n">env_ctor</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">457</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.9.0/envs/py39b/lib/python3.9/site-packages/fiona/__init__.py:292,</span> in <span class="ni">open</span><span class="nt">(fp, mode, driver, schema, crs, encoding, layer, vfs, enabled_drivers, crs_wkt, allow_unsupported_drivers, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="n">path</span> <span class="o">=</span> <span class="n">parse_path</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="k">if</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">292</span>     <span class="n">colxn</span> <span class="o">=</span> <span class="n">Collection</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>         <span class="n">path</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="n">driver</span><span class="o">=</span><span class="n">driver</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>         <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>         <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="n">enabled_drivers</span><span class="o">=</span><span class="n">enabled_drivers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>         <span class="n">allow_unsupported_drivers</span><span class="o">=</span><span class="n">allow_unsupported_drivers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>         <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="n">colxn</span> <span class="o">=</span> <span class="n">Collection</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>         <span class="n">path</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="n">mode</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.9.0/envs/py39b/lib/python3.9/site-packages/fiona/collection.py:243,</span> in <span class="ni">Collection.__init__</span><span class="nt">(self, path, mode, driver, schema, crs, encoding, layer, vsi, archive, enabled_drivers, crs_wkt, ignore_fields, ignore_geometry, include_fields, wkt_version, allow_unsupported_drivers, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">243</span>     <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">WritingSession</span><span class="p">()</span>
+
+<span class="nn">File fiona/ogrext.pyx:588,</span> in <span class="ni">fiona.ogrext.Session.start</span><span class="nt">()</span>
+
+<span class="nn">File fiona/ogrext.pyx:143,</span> in <span class="ni">fiona.ogrext.gdal_open_vector</span><span class="nt">()</span>
+
+<span class="ne">DriverError</span>: data/india_crop_boundary/india_10k_fields.shp: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fields_gdf</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inspect-the-dataframes">
+<h3>Inspect the DataFrames<a class="headerlink" href="#inspect-the-dataframes" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fields GeoDataFrame shape:&quot;</span><span class="p">,</span> <span class="n">fields_gdf</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Karnataka districts shape:&quot;</span><span class="p">,</span> <span class="n">karnataka_districts</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fields GeoDataFrame shape: (10013, 4)
+Karnataka districts shape: (236, 8)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-the-districts-and-fields">
+<h3>Visualize the Districts and Fields<a class="headerlink" href="#visualize-the-districts-and-fields" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot Karnataka districts</span>
+<span class="n">karnataka_districts</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Karnataka Districts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Plot field boundaries</span>
+<span class="n">fields_gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Field Boundaries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0351dd2bbb545e215f793f2642350223d9e1bd2ab5e8bbea761cba83d579c3f8.png" src="../_images/0351dd2bbb545e215f793f2642350223d9e1bd2ab5e8bbea761cba83d579c3f8.png" />
+<img alt="../_images/d748acbedce03bbd574987e33371280391857162ee1b9a61ce94ebc3fbd4d72d.png" src="../_images/d748acbedce03bbd574987e33371280391857162ee1b9a61ce94ebc3fbd4d72d.png" />
+</div>
+</div>
+</section>
+<section id="filter-to-field-boundaries-in-karnataka">
+<h3>Filter to field boundaries in Karnataka<a class="headerlink" href="#filter-to-field-boundaries-in-karnataka" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure both GeoDataFrames have the same CRS</span>
+<span class="n">fields_gdf</span> <span class="o">=</span> <span class="n">fields_gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">karnataka_districts</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+
+<span class="c1"># Perform spatial join to get fields within Karnataka</span>
+<span class="n">fields_karnataka</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span>
+    <span class="n">fields_gdf</span><span class="p">,</span>
+    <span class="n">karnataka_districts</span><span class="p">,</span>
+    <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+    <span class="n">predicate</span><span class="o">=</span><span class="s1">&#39;within&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Plot both layers together</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">karnataka_districts</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">fields_karnataka</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fields within Karnataka Districts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/956ae5d5ae890bb2f7ea3a71df387f59867944408b77c74a87fd7fb3c65eed20.png" src="../_images/956ae5d5ae890bb2f7ea3a71df387f59867944408b77c74a87fd7fb3c65eed20.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="extracting-temperature-data-from-era5-datasets">
+<h2>2. Extracting Temperature Data from ERA5 Datasets<a class="headerlink" href="#extracting-temperature-data-from-era5-datasets" title="Link to this heading">#</a></h2>
+<p>We’ll extract temperature time series data for the fields using ERA5 datasets.</p>
+<section id="load-era5-temperature-data">
+<h3>Load ERA5 Temperature Data<a class="headerlink" href="#load-era5-temperature-data" title="Link to this heading">#</a></h3>
+<p>First, we need to access the ERA5 datasets from the Microsoft Planetary Computer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define spatial and temporal parameters</span>
+<span class="n">india_bbox</span> <span class="o">=</span> <span class="p">[</span><span class="mf">68.1</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">97.4</span><span class="p">,</span> <span class="mf">37.1</span><span class="p">]</span>  <span class="c1"># Bounding box for India</span>
+<span class="n">karnataka_bbox</span> <span class="o">=</span> <span class="p">[</span><span class="mf">74.1</span><span class="p">,</span> <span class="mf">11.5</span><span class="p">,</span> <span class="mf">78.7</span><span class="p">,</span> <span class="mf">18.75</span><span class="p">]</span>  <span class="c1"># Bounding box for Karnataka </span>
+<span class="n">datetime_range</span> <span class="o">=</span> <span class="s2">&quot;2020-01-01/2020-12-31&quot;</span>
+
+<span class="c1"># Initialize STAC client</span>
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">pystac_client</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+    <span class="s2">&quot;https://planetarycomputer.microsoft.com/api/stac/v1/&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Search for ERA5 data</span>
+<span class="n">search</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+    <span class="n">collections</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;era5-pds&quot;</span><span class="p">],</span>
+    <span class="n">bbox</span><span class="o">=</span><span class="n">india_bbox</span><span class="p">,</span>
+    <span class="n">datetime</span><span class="o">=</span><span class="n">datetime_range</span><span class="p">,</span>
+    <span class="n">query</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;era5:kind&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;eq&quot;</span><span class="p">:</span> <span class="s2">&quot;an&quot;</span><span class="p">}}</span>  <span class="c1"># Analysis data only</span>
+<span class="p">)</span>
+
+<span class="c1"># Fetch matching items</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">search</span><span class="o">.</span><span class="n">item_collection</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of matching items: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of matching items: 12
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-and-concatenate-era5-datasets">
+<h3>Load and Concatenate ERA5 Datasets<a class="headerlink" href="#load-and-concatenate-era5-datasets" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+    <span class="n">asset</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">assets</span><span class="p">[</span><span class="s2">&quot;air_temperature_at_2_metres&quot;</span><span class="p">]</span>
+    <span class="n">signed_asset</span> <span class="o">=</span> <span class="n">planetary_computer</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">asset</span><span class="p">)</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
+        <span class="n">signed_asset</span><span class="o">.</span><span class="n">href</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">signed_asset</span><span class="o">.</span><span class="n">extra_fields</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;xarray:open_kwargs&quot;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+        <span class="n">lat</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">karnataka_bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">karnataka_bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+        <span class="n">lon</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">karnataka_bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">karnataka_bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">datasets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+
+<span class="c1"># Concatenate datasets along the time dimension</span>
+<span class="n">era5_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">era5_ds</span> <span class="o">=</span> <span class="n">era5_ds</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inspect-the-dataset">
+<h3>Inspect the Dataset<a class="headerlink" href="#inspect-the-dataset" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">era5_ds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt; Size: 506MB
+Dimensions:                      (time: 8784, lat: 123, lon: 117)
+Coordinates:
+  * lat                          (lat) float32 492B 37.0 36.75 36.5 ... 6.75 6.5
+  * lon                          (lon) float32 468B 68.25 68.5 ... 97.0 97.25
+  * time                         (time) datetime64[ns] 70kB 2020-01-01 ... 20...
+Data variables:
+    air_temperature_at_2_metres  (time, lat, lon) float32 506MB dask.array&lt;chunksize=(372, 88, 27), meta=np.ndarray&gt;
+Attributes:
+    institution:  ECMWF
+    source:       Reanalysis
+    title:        ERA5 forecasts
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="processing-and-saving-era5-data">
+<h2>3. Processing and Saving ERA5 Data<a class="headerlink" href="#processing-and-saving-era5-data" title="Link to this heading">#</a></h2>
+<p>We’ll process the ERA5 data by resampling it to daily and weekly means and then save it in Zarr format for efficient access.</p>
+<section id="resample-data-to-daily-and-weekly-means">
+<h3>Resample Data to Daily and Weekly Means<a class="headerlink" href="#resample-data-to-daily-and-weekly-means" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="c1"># Compute the dataset (load data into memory)</span>
+<span class="n">era5_ds</span> <span class="o">=</span> <span class="n">era5_ds</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+
+<span class="c1"># Resample to daily mean</span>
+<span class="n">era5_daily_ds</span> <span class="o">=</span> <span class="n">era5_ds</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Resample to weekly mean</span>
+<span class="n">era5_weekly_ds</span> <span class="o">=</span> <span class="n">era5_ds</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="save-datasets-in-zarr-format">
+<h3>Save Datasets in Zarr Format<a class="headerlink" href="#save-datasets-in-zarr-format" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="k">def</span> <span class="nf">save_zarr</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">time_resolution</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the dataset in Zarr format with appropriate chunking.&quot;&quot;&quot;</span>
+    <span class="n">time_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">time_len</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+    <span class="n">encoding</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;air_temperature_at_2_metres&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;chunks&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">time_len</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}}</span>
+    
+    <span class="n">output_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">time_resolution</span><span class="si">}</span><span class="s2">_air_temperature.zarr&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving </span><span class="si">{</span><span class="n">time_resolution</span><span class="si">}</span><span class="s2"> data to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save datasets</span>
+<span class="n">save_zarr</span><span class="p">(</span><span class="n">era5_ds</span><span class="p">,</span> <span class="s2">&quot;hourly&quot;</span><span class="p">)</span>
+<span class="n">save_zarr</span><span class="p">(</span><span class="n">era5_daily_ds</span><span class="p">,</span> <span class="s2">&quot;daily&quot;</span><span class="p">)</span>
+<span class="n">save_zarr</span><span class="p">(</span><span class="n">era5_weekly_ds</span><span class="p">,</span> <span class="s2">&quot;weekly&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving hourly data to data/hourly_air_temperature.zarr
+Saving daily data to data/daily_air_temperature.zarr
+Saving weekly data to data/weekly_air_temperature.zarr
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="extracting-time-series-for-field-centroids">
+<h2>4. Extracting Time Series for Field Centroids<a class="headerlink" href="#extracting-time-series-for-field-centroids" title="Link to this heading">#</a></h2>
+<p>We’ll extract temperature time series data for the centroids of selected fields.</p>
+<section id="define-a-function-to-extract-time-series">
+<h3>Define a Function to Extract Time Series<a class="headerlink" href="#define-a-function-to-extract-time-series" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_timeseries_for_centroid</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">geometry</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;air_temperature_at_2_metres&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract a time series from an xarray Dataset using the centroid of a geometry.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get the centroid coordinates</span>
+    <span class="n">centroid</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span>
+    <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">centroid</span><span class="o">.</span><span class="n">y</span>
+    
+    <span class="c1"># Extract time series using nearest neighbor selection</span>
+    <span class="n">point_data</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+        <span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span>
+        <span class="n">lon</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span>
+        <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Convert to pandas Series</span>
+    <span class="n">time_series</span> <span class="o">=</span> <span class="n">point_data</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">time_series</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-the-weekly-dataset">
+<h3>Load the Weekly Dataset<a class="headerlink" href="#load-the-weekly-dataset" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the weekly dataset</span>
+<span class="n">ds_weekly</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_zarr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/weekly_air_temperature.zarr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extract-and-plot-time-series-for-a-single-field">
+<h3>Extract and Plot Time Series for a Single Field<a class="headerlink" href="#extract-and-plot-time-series-for-a-single-field" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select a geometry at random (e.g., the 21st field)</span>
+<span class="n">geometry</span> <span class="o">=</span> <span class="n">fields_gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span>
+
+<span class="c1"># Extract time series</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">extract_timeseries_for_centroid</span><span class="p">(</span><span class="n">ds_weekly</span><span class="p">,</span> <span class="n">geometry</span><span class="p">)</span>
+<span class="n">ts_celsius</span> <span class="o">=</span> <span class="n">ts</span> <span class="o">-</span> <span class="mf">273.15</span>  <span class="c1"># Convert from Kelvin to Celsius</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">ts_celsius</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weekly Temperature Time Series for Selected Field&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (°C)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b633d2dbf9cd3392d8014551af3b899c399427f11ee1e044cd6d0712938cdb96.png" src="../_images/b633d2dbf9cd3392d8014551af3b899c399427f11ee1e044cd6d0712938cdb96.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="analyzing-temperature-patterns-across-fields">
+<h2>5. Analyzing Temperature Patterns across fields<a class="headerlink" href="#analyzing-temperature-patterns-across-fields" title="Link to this heading">#</a></h2>
+<p>We’ll analyze temperature patterns across different fields by plotting the temperature time series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fields_karnataka</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(712, 12)
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>We have 712 fields mapped in the field boundary dataset.
+Note: Not all fields are mapped, but you can use the released model to get all field boundaries in your ROI.</p>
+</div></blockquote>
+<section id="define-a-function-to-plot-time-series-for-multiple-fields">
+<h3>Define a Function to Plot Time Series for Multiple Fields<a class="headerlink" href="#define-a-function-to-plot-time-series-for-multiple-fields" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_timeseries</span><span class="p">(</span><span class="n">fields_df</span><span class="p">,</span> <span class="n">ds</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot the temperature time series for all fields in a district.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Extract time series for all fields</span>
+    <span class="n">time_series_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">fields_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">geometry</span>
+        <span class="n">ts</span> <span class="o">=</span> <span class="n">extract_timeseries_for_centroid</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">geometry</span><span class="p">)</span>
+        <span class="n">ts_celsius</span> <span class="o">=</span> <span class="n">ts</span> <span class="o">-</span> <span class="mf">273.15</span>  <span class="c1"># Convert from Kelvin to Celsius</span>
+        <span class="n">ts</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Field </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">index</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">time_series_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ts_celsius</span><span class="p">)</span>
+    
+    <span class="c1"># Combine all series into a DataFrame</span>
+    <span class="n">df_temps</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">time_series_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Plot all time series</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+        <span class="c1"># Define season date ranges for 2020</span>
+    <span class="n">kharif_start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2020-06-01&#39;</span><span class="p">)</span>
+    <span class="n">kharif_end</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2020-11-30&#39;</span><span class="p">)</span>
+    <span class="n">rabi_start_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">)</span>
+    <span class="n">rabi_end_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2020-04-30&#39;</span><span class="p">)</span>
+    <span class="n">rabi_start_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2020-11-01&#39;</span><span class="p">)</span>
+    <span class="n">rabi_end_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2020-12-31&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Create season masks</span>
+    <span class="n">kharif_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">kharif_start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">kharif_end</span><span class="p">)</span>
+    <span class="n">rabi_mask_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">rabi_start_1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">rabi_end_1</span><span class="p">)</span>
+    <span class="n">rabi_mask_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">rabi_start_2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">rabi_end_2</span><span class="p">)</span>
+    
+    <span class="c1"># Plot seasonal backgrounds</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">kharif_mask</span><span class="p">],</span> 
+                     <span class="n">df_temps</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> 
+                     <span class="n">df_temps</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> 
+                     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> 
+                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> 
+                     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kharif Season&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Plot Rabi season backgrounds</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">rabi_mask_1</span><span class="p">],</span> 
+                     <span class="n">df_temps</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> 
+                     <span class="n">df_temps</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> 
+                     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> 
+                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> 
+                     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rabi Season&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">rabi_mask_2</span><span class="p">],</span> 
+                     <span class="n">df_temps</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> 
+                     <span class="n">df_temps</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> 
+                     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> 
+                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df_temps</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Plot mean and standard deviation</span>
+    <span class="n">mean_temp</span> <span class="o">=</span> <span class="n">df_temps</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">std_temp</span> <span class="o">=</span> <span class="n">df_temps</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">mean_temp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mean Temperature&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">df_temps</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                     <span class="n">mean_temp</span> <span class="o">-</span> <span class="n">std_temp</span><span class="p">,</span>
+                     <span class="n">mean_temp</span> <span class="o">+</span> <span class="n">std_temp</span><span class="p">,</span>
+                     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;±1 Std Dev&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Customize plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Weekly Temperature Time Series for Fields in Karnataka (2020)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (C)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="c1"># Adjust legend</span>
+    <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+    <span class="c1"># Remove duplicate Rabi season from legend</span>
+    <span class="n">unique_handles</span> <span class="o">=</span> <span class="n">handles</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># Kharif, Rabi, Mean, Std Dev</span>
+    <span class="n">unique_labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">unique_handles</span><span class="p">,</span> <span class="n">unique_labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Rotate x-axis labels</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+    
+    <span class="c1"># Add season annotations</span>
+    <span class="n">y_range</span> <span class="o">=</span> <span class="n">df_temps</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df_temps</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">y_pos</span> <span class="o">=</span> <span class="n">df_temps</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">+</span> <span class="n">y_range</span> <span class="o">*</span> <span class="mf">0.95</span>
+    
+    <span class="c1"># Print seasonal statistics</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Seasonal Statistics:&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Kharif season stats</span>
+    <span class="n">kharif_temps</span> <span class="o">=</span> <span class="n">df_temps</span><span class="p">[</span><span class="n">kharif_mask</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kharif Season (Jun-Nov):&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Temperature: </span><span class="si">{</span><span class="n">kharif_temps</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Std Deviation: </span><span class="si">{</span><span class="n">kharif_temps</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Rabi season stats (combining both periods)</span>
+    <span class="n">rabi_temps</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_temps</span><span class="p">[</span><span class="n">rabi_mask_1</span><span class="p">],</span> <span class="n">df_temps</span><span class="p">[</span><span class="n">rabi_mask_2</span><span class="p">]])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rabi Season (Nov-Apr):&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Temperature: </span><span class="si">{</span><span class="n">rabi_temps</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Std Deviation: </span><span class="si">{</span><span class="n">rabi_temps</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_timeseries</span><span class="p">(</span><span class="n">fields_karnataka</span><span class="p">,</span> <span class="n">ds_weekly</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Seasonal Statistics:
+
+Kharif Season (Jun-Nov):
+Mean Temperature: 24.99K
+Std Deviation: 1.00K
+
+Rabi Season (Nov-Apr):
+Mean Temperature: 25.61K
+Std Deviation: 2.56K
+</pre></div>
+</div>
+<img alt="../_images/6e46dfb66dc8df714523a70e62b3c33ff8d4e19daf05bbaa4073ba0e061ba9fd.png" src="../_images/6e46dfb66dc8df714523a70e62b3c33ff8d4e19daf05bbaa4073ba0e061ba9fd.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="lonboard-scalable-dynamic-visualization-on-maps">
+<h2>Lonboard - Scalable Dynamic Visualization on Maps<a class="headerlink" href="#lonboard-scalable-dynamic-visualization-on-maps" title="Link to this heading">#</a></h2>
+<p>Lonboard aims to enable visualizing large geospatial datasets interactively through a simple interface inside jupyter notebooks.
+It can easily render 10 million points inside your notebook - being built on top of geoarrow &amp; geoparquet. It also utilizes any GPU that is available locally in your system.</p>
+<p>Check example visualizations here: <a class="reference external" href="https://developmentseed.org/lonboard/latest/examples/">https://developmentseed.org/lonboard/latest/examples/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lonboard</span> <span class="kn">import</span> <span class="n">Map</span><span class="p">,</span> <span class="n">PolygonLayer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karnataka_layer</span> <span class="o">=</span> <span class="n">PolygonLayer</span><span class="o">.</span><span class="n">from_geopandas</span><span class="p">(</span>
+    <span class="n">karnataka_districts</span><span class="p">,</span>
+    <span class="n">get_line_width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>  <span class="c1"># width in default units (meters)</span>
+    <span class="n">line_width_min_pixels</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>  <span class="c1"># minimum width when zoomed out</span>
+    <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">],</span>  <span class="c1"># light gray</span>
+    <span class="n">get_line_color</span><span class="o">=</span><span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span>  <span class="c1"># dark border color</span>
+<span class="p">)</span>
+
+<span class="n">fields_layer</span> <span class="o">=</span> <span class="n">PolygonLayer</span><span class="o">.</span><span class="n">from_geopandas</span><span class="p">(</span>
+    <span class="n">fields_karnataka</span><span class="p">,</span>
+    <span class="n">get_line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># width in default units (meters)</span>
+    <span class="n">line_width_min_pixels</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>  <span class="c1"># minimum width when zoomed out</span>
+    <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">251</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>  <span class="c1"># red</span>
+    <span class="n">get_line_color</span><span class="o">=</span><span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span>  <span class="c1"># dark border color</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">karnataka_layer</span><span class="p">,</span> <span class="n">fields_layer</span><span class="p">])</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c4902096d2364073bfd0fec0de366fee", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_stac_and_zarr.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exploring Cloud Native Geospatial Data Formats with ERA5 Reanalysis Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03_raster_and_vector.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Efficiently Selecting and Processing Raster and Vector Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-visualizing-geospatial-data">1. Loading and Visualizing Geospatial Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-field-boundaries-and-district-shapefiles">Load Field Boundaries and District Shapefiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-dataframes">Inspect the DataFrames</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-districts-and-fields">Visualize the Districts and Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-to-field-boundaries-in-karnataka">Filter to field boundaries in Karnataka</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-temperature-data-from-era5-datasets">2. Extracting Temperature Data from ERA5 Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-era5-temperature-data">Load ERA5 Temperature Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-concatenate-era5-datasets">Load and Concatenate ERA5 Datasets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-dataset">Inspect the Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-and-saving-era5-data">3. Processing and Saving ERA5 Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample-data-to-daily-and-weekly-means">Resample Data to Daily and Weekly Means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-datasets-in-zarr-format">Save Datasets in Zarr Format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-time-series-for-field-centroids">4. Extracting Time Series for Field Centroids</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-function-to-extract-time-series">Define a Function to Extract Time Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-weekly-dataset">Load the Weekly Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-and-plot-time-series-for-a-single-field">Extract and Plot Time Series for a Single Field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-temperature-patterns-across-fields">5. Analyzing Temperature Patterns across fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-function-to-plot-time-series-for-multiple-fields">Define a Function to Plot Time Series for Multiple Fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lonboard-scalable-dynamic-visualization-on-maps">Lonboard - Scalable Dynamic Visualization on Maps</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Development Seed
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
