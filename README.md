@@ -10,6 +10,7 @@ Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a
   - [Notebook 2: STAC & Zarr](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/01_stac_and_zarr.ipynb)
   - [Notebook 3: Dynamic Visualization](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/02_dynamic_visualization.ipynb)
   - [Notebook 4: Raster & Vector](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/03_raster_and_vector.ipynb)
+  - [Notebook 5: Vector Processing](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/04_vector_processing.ipynb)
 - [Repository Structure](#repository-structure)
 - [Contributing](#contributing)
 - [License](#license)
