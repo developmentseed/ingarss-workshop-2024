@@ -158,3 +158,5 @@ cython_debug/
 # Data
 data/
 book/docs/data
+
+.DS_Store
