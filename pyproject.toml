@@ -20,5 +20,6 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "jupyter-book>=1.0.3",
     "jupyterlab>=4.3.1",
 ]

@@ -1,6 +1,14 @@
 # InGARSS Workshop 2024
 
-Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a collection of Jupyter notebooks designed to guide you through.
+Welcome to the InGARSS Workshop 2024 tutorial series. This repository contains a collection of Jupyter notebooks designed to guide you through the workshop.
+> By: [Development Seed](https://developmentseed.org/) & [SatSure](https://www.satsure.co/)
+
+## Authors
+
+- [Gajesh Ladhar - SatSure](linkedin.com/in/gajeshladhar/)
+- [Rakshith Satish - SatSure](linkedin.com/in/rakshith-sathish/)
+- [Lilly Thomas - Development Seed](linkedin.com/in/lilly-thomas-5167059a/)
+- [Soumya Ranjan Mohanty - Development Seed](linkedin.com/in/srmsoumya/)
 
 ## Table of Contents
 
@@ -11,6 +19,7 @@ Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a
   - [Notebook 3: Dynamic Visualization](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/02_dynamic_visualization.ipynb)
   - [Notebook 4: Raster & Vector](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/03_raster_and_vector.ipynb)
   - [Notebook 5: Vector Processing](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/04_vector_processing.ipynb)
+  - [Notebook 6: Optimization & Scaling](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/05_optimization_and_scaling.ipynb)
 - [Repository Structure](#repository-structure)
 - [Contributing](#contributing)
 - [License](#license)
@@ -59,6 +68,18 @@ Learn to analyze & visualize time-series data using xarray and lonboard.
 
 Learn about STAC & Cloud Optimized GeoTIFFs.
 
+### Notebook 5: Vector Processing
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/04_vector_processing.ipynb)
+
+Learn about vector processing using GeoPandas.
+
+### Notebook 6: Optimization & Scaling
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/05_optimization_and_scaling.ipynb)
+
+Learn about optimization & scaling using Dask & Numba.
+
 ## Repository Structure
 
 - `book/docs/`: Contains the tutorial Jupyter notebooks.
@@ -74,7 +95,3 @@ Contributions are welcome! If you have suggestions or find issues, please open a
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-**Note:** This repository is currently on the `colab-setup` branch. All the Colab links point to this branch to ensure compatibility.
