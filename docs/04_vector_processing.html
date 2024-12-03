@@ -460,22 +460,13 @@ if IN_COLAB:
 
     !pip install uv
     !uv pip install --system \
-        &quot;adlfs&gt;=2024.7.0&quot; \
-        &quot;dask&gt;=2024.11.2&quot; \
         &quot;fsspec&gt;=2024.10.0&quot; \
         &quot;geopandas&gt;=1.0.1&quot; \
-        &quot;lonboard&gt;=0.10.3&quot; \
         &quot;matplotlib&gt;=3.9.2&quot; \
-        &quot;planetary-computer&gt;=1.0.0&quot; \
         &quot;pyarrow&gt;=18.0.0&quot; \
-        &quot;pystac-client&gt;=0.8.5&quot; \
-        &quot;xarray&gt;=2024.11.0&quot; \
-        &quot;zarr&gt;=2.18.3&quot; \
-        &quot;odc-stac&gt;=0.3.10&quot; \
-        &quot;rasterio&gt;=1.4.2&quot; \
-        &quot;rioxarray&gt;=0.18.1&quot; \
-        &quot;rasterstats&gt;=0.20.0&quot; \
-        &quot;numpy&gt;=2.1.3&quot;
+        &quot;numpy&gt;=2.1.3&quot; \
+        &quot;folium&quot; \
+        &quot;mapclassify&quot;
 
     data_dir = Path(&quot;/content/drive/MyDrive/ingarss_workshop_2024&quot;)
 
@@ -484,8 +475,8 @@ if IN_COLAB:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 198 µs, sys: 71 µs, total: 269 µs
-Wall time: 273 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 226 µs, sys: 103 µs, total: 329 µs
+Wall time: 334 µs
 </pre></div>
 </div>
 </div>
@@ -496,17 +487,24 @@ Wall time: 273 µs
 <p>Geospatial data is often available from specific GIS file formats or data stores, like ESRI shapefiles, GeoJSON files, geopackage files, PostGIS (PostgreSQL) database, …</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/karnataka_district/KA_subdistrict.shp&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">state</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/karnataka_district/KA_subdistrict.shp&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 
-<span class="ne">NameError</span>: name &#39;geopandas&#39; is not defined
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;geopandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/karnataka_district/KA_subdistrict.shp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -733,7 +731,7 @@ A few resources in case you want to learn more about pandas:</p>
 <p>Let’s visualize those geometry objects together:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geopandas</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">bagalkot_centroid</span><span class="p">,</span> <span class="n">dharwad_centroid</span><span class="p">,</span> <span class="n">line</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab10&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">bagalkot_centroid</span><span class="p">,</span> <span class="n">dharwad_centroid</span><span class="p">,</span> <span class="n">line</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab10&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
