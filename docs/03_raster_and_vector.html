@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Efficiently Selecting and Processing Raster and Vector Data &#8212; InGARSS Scaling Science Workshop 2024</title>
   
@@ -18,45 +19,48 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/03_raster_and_vector';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -70,15 +74,7 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -113,14 +109,11 @@
 </form></div>
   </div>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -135,11 +128,9 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="../intro.html">
-  
   
   
   
@@ -149,23 +140,12 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="InGARSS Scaling Science Workshop 2024 - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="InGARSS Scaling Science Workshop 2024 - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -235,7 +215,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024-main/blob/main/book/docs/03_raster_and_vector.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/developmentseed/ingarss-workshop-2024/blob/main/book/docs/03_raster_and_vector.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -266,7 +246,7 @@
       
       
       
-      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main" target="_blank"
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +263,7 @@
       
       
       
-      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main/edit/main/book/docs/03_raster_and_vector.ipynb" target="_blank"
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024/edit/main/book/docs/03_raster_and_vector.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +280,7 @@
       
       
       
-      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024-main/issues/new?title=Issue%20on%20page%20%2Fdocs/03_raster_and_vector.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/developmentseed/ingarss-workshop-2024/issues/new?title=Issue%20on%20page%20%2Fdocs/03_raster_and_vector.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,22 +362,20 @@
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -444,14 +422,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="efficiently-selecting-and-processing-raster-and-vector-data">
-<h1>Efficiently Selecting and Processing Raster and Vector Data<a class="headerlink" href="#efficiently-selecting-and-processing-raster-and-vector-data" title="Link to this heading">#</a></h1>
+<h1>Efficiently Selecting and Processing Raster and Vector Data<a class="headerlink" href="#efficiently-selecting-and-processing-raster-and-vector-data" title="Permalink to this heading">#</a></h1>
 <p>This workflow introduces how to search for, acquire and process raster data efficiently. Specfically, we demonstrate finding <a class="reference external" href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2">Sentinel-2</a> satellite imagery relevant for an area and time, in this case, a time range of a few months (during the Kharif season) in 2020 over a subdistrict in India.</p>
 <p>Note: some portions of this notebook are inspired by the <a class="reference external" href="https://carpentries-incubator.github.io/geospatial-python/index.html">Introduction to Geospatial Raster and Vector Data with Python course</a>.</p>
 <section id="main-objectives">
-<h2>Main Objectives<a class="headerlink" href="#main-objectives" title="Link to this heading">#</a></h2>
+<h2>Main Objectives<a class="headerlink" href="#main-objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Access Sentinel-2 data</strong>: Locate and retrieve relevant Sentinel-2 data for a specific area and timeframe via STAC.</p></li>
 <li><p><strong>Inspect and visualize raster data</strong>: Examine metadata, including projections, bands, dimensions, no data pixels. Plot raster data correctly.</p></li>
@@ -467,53 +445,53 @@ document.write(`
 <p>At the end, you’ll be able to efficiently process raster imagery for a region and time of interest!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%time
+import os
+from pathlib import Path
 
-<span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+data_dir = Path(&quot;data&quot;)
 
-<span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">google.colab</span>
-    <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">False</span>
+try:
+    import google.colab
+    IN_COLAB = True
+except:
+    IN_COLAB = False
 
-<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
-    <span class="c1"># Mount drive to access data</span>
-    <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+if IN_COLAB:
+    # Mount drive to access data
+    from google.colab import drive
+    drive.mount(&#39;/content/drive&#39;)
 
-    <span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">uv</span>
-    <span class="err">!</span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">system</span> \
-        <span class="s2">&quot;adlfs&gt;=2024.7.0&quot;</span> \
-        <span class="s2">&quot;dask&gt;=2024.11.2&quot;</span> \
-        <span class="s2">&quot;fsspec&gt;=2024.10.0&quot;</span> \
-        <span class="s2">&quot;geocube&gt;=0.7.0&quot;</span> \
-        <span class="s2">&quot;geopandas&gt;=1.0.1&quot;</span> \
-        <span class="s2">&quot;lonboard&gt;=0.10.3&quot;</span> \
-        <span class="s2">&quot;matplotlib&gt;=3.9.2&quot;</span> \
-        <span class="s2">&quot;planetary-computer&gt;=1.0.0&quot;</span> \
-        <span class="s2">&quot;pyarrow&gt;=18.0.0&quot;</span> \
-        <span class="s2">&quot;pystac-client&gt;=0.8.5&quot;</span> \
-        <span class="s2">&quot;xarray&gt;=2024.11.0&quot;</span> \
-        <span class="s2">&quot;zarr&gt;=2.18.3&quot;</span> \
-        <span class="s2">&quot;odc-stac&gt;=0.3.10&quot;</span> \
-        <span class="s2">&quot;rasterio&gt;=1.4.2&quot;</span> \
-        <span class="s2">&quot;rioxarray&gt;=0.18.1&quot;</span> \
-        <span class="s2">&quot;rasterstats&gt;=0.20.0&quot;</span> \
-        <span class="s2">&quot;numpy&gt;=2.1.3&quot;</span> \
-        <span class="s2">&quot;scipy==1.14.1&quot;</span>
+    !pip install uv
+    !uv pip install --system \
+        &quot;adlfs&gt;=2024.7.0&quot; \
+        &quot;dask&gt;=2024.11.2&quot; \
+        &quot;fsspec&gt;=2024.10.0&quot; \
+        &quot;geocube&gt;=0.7.0&quot; \
+        &quot;geopandas&gt;=1.0.1&quot; \
+        &quot;lonboard&gt;=0.10.3&quot; \
+        &quot;matplotlib&gt;=3.9.2&quot; \
+        &quot;planetary-computer&gt;=1.0.0&quot; \
+        &quot;pyarrow&gt;=18.0.0&quot; \
+        &quot;pystac-client&gt;=0.8.5&quot; \
+        &quot;xarray&gt;=2024.11.0&quot; \
+        &quot;zarr&gt;=2.18.3&quot; \
+        &quot;odc-stac&gt;=0.3.10&quot; \
+        &quot;rasterio&gt;=1.4.2&quot; \
+        &quot;rioxarray&gt;=0.18.1&quot; \
+        &quot;rasterstats&gt;=0.20.0&quot; \
+        &quot;numpy&gt;=2.1.3&quot; \
+        &quot;scipy==1.14.1&quot;
 
-    <span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/ingarss_workshop_2024&quot;</span><span class="p">)</span>
+    data_dir = Path(&quot;/content/drive/MyDrive/ingarss_workshop_2024&quot;)
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Environment activated and data ready!&quot;</span><span class="p">)</span>
+    print(&quot;✅ Environment activated and data ready!&quot;)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 204 µs, sys: 77 µs, total: 281 µs
-Wall time: 285 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 191 µs, sys: 75 µs, total: 266 µs
+Wall time: 269 µs
 </pre></div>
 </div>
 </div>
@@ -547,14 +525,13 @@ Wall time: 285 µs
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">time</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">geocube.api.core</span> <span class="kn">import</span> <span class="n">make_geocube</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">geopandas</span> <span class="kn">import</span> <span class="n">GeoSeries</span><span class="p">,</span> <span class="n">GeoDataFrame</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">lonboard</span> <span class="kn">import</span> <span class="n">Map</span><span class="p">,</span> <span class="n">PolygonLayer</span><span class="p">,</span> <span class="n">viz</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">dask</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">odc.stac</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">math</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;geocube&#39;
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;geopandas&#39;
 </pre></div>
 </div>
 </div>
@@ -564,7 +541,7 @@ Wall time: 285 µs
 </div></blockquote>
 </section>
 <section id="accessing-raster-data">
-<h2>Accessing raster data<a class="headerlink" href="#accessing-raster-data" title="Link to this heading">#</a></h2>
+<h2>Accessing raster data<a class="headerlink" href="#accessing-raster-data" title="Permalink to this heading">#</a></h2>
 <p>We’ll select an area of interest by randomly sampling a subdistrict within India. This is what we will use to obtain geographic bounds required for selecting and acquiring raster data.</p>
 <p>Note that we set the coordinate reference system (CRS) to the projection that is used to load web map tiles and store coordinate metadata in the STAC catalog, <code class="docutils literal notranslate"><span class="pre">EPSG:4326</span> <span class="pre">(WGS</span> <span class="pre">84)</span></code>.</p>
 <div class="cell docutils container">
@@ -888,7 +865,7 @@ Attributes:
 </div>
 </section>
 <section id="working-with-raster-data">
-<h2>Working with Raster Data<a class="headerlink" href="#working-with-raster-data" title="Link to this heading">#</a></h2>
+<h2>Working with Raster Data<a class="headerlink" href="#working-with-raster-data" title="Permalink to this heading">#</a></h2>
 <p>This section introduces key concepts, tools, and attributes related to raster data in Python. It also covers strategies for managing missing or invalid values in raster datasets.</p>
 <p>We’ll use the <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> library as our main tool for raster processing. Built on <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> (a library for working with raster files) and <code class="docutils literal notranslate"><span class="pre">xarray</span></code> (designed for multi-dimensional arrays), <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> enhances these tools by providing additional geospatial functionality. For example, it includes the <code class="docutils literal notranslate"><span class="pre">open_rasterio</span></code> function for reading raster files and extends <code class="docutils literal notranslate"><span class="pre">xarray</span></code> objects, such as <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>, with geospatial methods via the <code class="docutils literal notranslate"><span class="pre">rio</span></code> accessor. These features become available once you import <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code>.</p>
 <p>To demonstrate, we will use the <code class="docutils literal notranslate"><span class="pre">nir09</span></code> band from the first image scene retrieved. This can be loaded with the <code class="docutils literal notranslate"><span class="pre">rioxarray.open_rasterio()</span></code> function, using the URL (Hypertext Reference or <code class="docutils literal notranslate"><span class="pre">href</span></code>) of the band asset.</p>
@@ -1328,7 +1305,7 @@ Attributes:
 <p>The Coordinate Reference System for <code class="docutils literal notranslate"><span class="pre">raster_b9.rio.crs</span></code> is returned as <code class="docutils literal notranslate"><span class="pre">EPSG:32643</span></code>. The no-data value is set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, and the bounding box corners of our raster are returned by the output of <code class="docutils literal notranslate"><span class="pre">.bounds()</span></code>. The height and width in number of pixels are returned from <code class="docutils literal notranslate"><span class="pre">.rio.height</span></code> and <code class="docutils literal notranslate"><span class="pre">.rio.width</span></code>, respectively.</p>
 </section>
 <section id="visualizing-raster-data">
-<h2>Visualizing raster data<a class="headerlink" href="#visualizing-raster-data" title="Link to this heading">#</a></h2>
+<h2>Visualizing raster data<a class="headerlink" href="#visualizing-raster-data" title="Permalink to this heading">#</a></h2>
 <p>We’ve reviewed the attributes of our raster. Now let’s see the raw values of the array with <code class="docutils literal notranslate"><span class="pre">.values</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1443,7 +1420,7 @@ Attributes:
 </div>
 </section>
 <section id="deciphering-the-raster-coordinate-reference-system-crs">
-<h2>Deciphering the Raster Coordinate Reference System (CRS)<a class="headerlink" href="#deciphering-the-raster-coordinate-reference-system-crs" title="Link to this heading">#</a></h2>
+<h2>Deciphering the Raster Coordinate Reference System (CRS)<a class="headerlink" href="#deciphering-the-raster-coordinate-reference-system-crs" title="Permalink to this heading">#</a></h2>
 <p>An essential detail to examine in geospatial data is the Coordinate Reference System (CRS), which defines how spatial data is mapped to the Earth’s surface. Using the <code class="docutils literal notranslate"><span class="pre">.rio.crs</span></code> method, you can access the CRS information of your dataset. This method retrieves the CRS string associated with your <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1512,7 +1489,7 @@ Datum: World Geodetic System 1984 ensemble
 <p>The <strong>Transverse Mercator</strong> projection method is employed, optimal for regions with narrow longitudinal widths, such as UTM zones. Additionally, the CRS attributes include the mechanism for projecting coordinates onto a flat (Cartesian) plane. While the UTM system includes zones, not all CRSs are zone-specific, and this detail pertains specifically to UTM-based systems.</p>
 </section>
 <section id="calculate-raster-statistics">
-<h2>Calculate Raster Statistics<a class="headerlink" href="#calculate-raster-statistics" title="Link to this heading">#</a></h2>
+<h2>Calculate Raster Statistics<a class="headerlink" href="#calculate-raster-statistics" title="Permalink to this heading">#</a></h2>
 <p>Knowing basic statistical values of a raster dataset can be valuable. We can obtain some, such as minimum, maximum, mean, and standard deviation quite easily for <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code>s like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1562,7 +1539,7 @@ Coordinates:
 </div>
 </section>
 <section id="dealing-with-missing-data">
-<h2>Dealing with Missing Data<a class="headerlink" href="#dealing-with-missing-data" title="Link to this heading">#</a></h2>
+<h2>Dealing with Missing Data<a class="headerlink" href="#dealing-with-missing-data" title="Permalink to this heading">#</a></h2>
 <p>So far, we’ve visualized a band from a Sentinel-2 image and calculated its statistics. However, it’s critical to account for missing data, often indicated by a “nodata” value in raster datasets. This special value represents pixels where no valid data is available, typically due to sensor limitations or incomplete coverage. Missing data frequently appears along the raster’s edges when the dataset doesn’t fully cover the analyzed region.</p>
 <p>Raster datasets inherently have a rectangular structure, so areas without data—such as boundaries not covered by the sensor—are assigned the nodata value. For example, in this dataset, the nodata value (<code class="docutils literal notranslate"><span class="pre">raster_b9.rio.nodata</span></code>) is <strong>0</strong>. When visualizing the data or calculating statistics, these missing values can be mistakenly treated as valid, leading to skewed results. For instance, including nodata pixels with a value of zero could lower the 25th percentile or other metrics inaccurately.</p>
 <p>To handle this, missing data can be represented as <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (Not a Number), which ensures it is excluded from calculations. This transformation can be achieved by setting the parameter <code class="docutils literal notranslate"><span class="pre">masked=True</span></code> when loading the raster dataset. This approach provides a clearer distinction between valid and missing data, preventing distortion in analyses or visualizations.</p>
@@ -2008,7 +1985,7 @@ Attributes:
 <p>It’s worth mentioning that replacing <code class="docutils literal notranslate"><span class="pre">0</span></code> with <code class="docutils literal notranslate"><span class="pre">nan</span></code> to represent missing data will cause a change in the data type of the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> from integers to floats. This is an important consideration if the data type plays a crucial role in your specific use case or application.</p>
 </section>
 <section id="incorporating-multiple-bands">
-<h2>Incorporating multiple bands<a class="headerlink" href="#incorporating-multiple-bands" title="Link to this heading">#</a></h2>
+<h2>Incorporating multiple bands<a class="headerlink" href="#incorporating-multiple-bands" title="Permalink to this heading">#</a></h2>
 <p>Up to now, we have worked with single-band rasters, focusing on the <code class="docutils literal notranslate"><span class="pre">nir</span></code> and later the <code class="docutils literal notranslate"><span class="pre">nir09</span></code> bands from a Sentinel-2 scene. To obtain a more easy-to-interpret RGB “true-color” depiction of the area, we can utilize the True Color Image (TCI) asset. This asset provides a high-resolution visualization by combining three optical bands—Red, Green, and Blue (RGB)—captured by the Sentinel-2 satellite’s MultiSpectral Instrument (MSI). With a spatial resolution of 10 meters, the TCI functions as a clear and detailed view of the area, making it ideal for quick visual assessments and analysis. Like the <code class="docutils literal notranslate"><span class="pre">nir09</span></code> band, we can load the TCI using:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4148,7 +4125,7 @@ Data variables:
 </div>
 </section>
 <section id="dealing-with-cloud-covered-and-invalid-pixels">
-<h2>Dealing with cloud-covered and invalid pixels<a class="headerlink" href="#dealing-with-cloud-covered-and-invalid-pixels" title="Link to this heading">#</a></h2>
+<h2>Dealing with cloud-covered and invalid pixels<a class="headerlink" href="#dealing-with-cloud-covered-and-invalid-pixels" title="Permalink to this heading">#</a></h2>
 <p>To mask out clouds and invalid pixels from Sentinel-2 data, we can use the ‘SCL’ (Scene Classification Layer) band, which includes cloud and no data information. The SCL band classifies each pixel in the Sentinel-2 image, including cloud-related classes such as cloud shadows, medium-probability clouds, high-probability clouds, and cirrus clouds. By masking out these classes as well as those with the no data value, we can ignore unwanted pixels in the dataset.</p>
 <p>First we need to declare the cloud-related SCL classes. The common classes for clouds are:</p>
 <blockquote>
@@ -5609,7 +5586,7 @@ Data variables:
 <p>That looks pretty good! Now we have a cloud-masked composite. We can use this to get a clearer signal of near infrared over time.</p>
 </section>
 <section id="calculate-a-spectral-index">
-<h2>Calculate a spectral index<a class="headerlink" href="#calculate-a-spectral-index" title="Link to this heading">#</a></h2>
+<h2>Calculate a spectral index<a class="headerlink" href="#calculate-a-spectral-index" title="Permalink to this heading">#</a></h2>
 <p>In this next section, we will use our masked multi-spectral data to calculate a relevant spectral index for tasks such as crop type classification.</p>
 <p><strong>NDVI (Normalized Difference Vegetation Index)</strong> is a widely used index to assess vegetation health and density. It quantifies the difference between near-infrared (NIR) light, which vegetation strongly reflects, and red light, which vegetation absorbs. Higher NDVI values typically indicate healthier or denser vegetation, while lower or negative values suggest sparse or no vegetation (e.g., bare soil, urban areas, or water).</p>
 <div class="cell docutils container">
@@ -5825,7 +5802,7 @@ Data variables:
 </div>
 </section>
 <section id="zonal-statistics">
-<h2>Zonal statistics<a class="headerlink" href="#zonal-statistics" title="Link to this heading">#</a></h2>
+<h2>Zonal statistics<a class="headerlink" href="#zonal-statistics" title="Permalink to this heading">#</a></h2>
 <p>We will calculate <strong>zonal statistics</strong> now for an NDVI composite. Zonal statistics refers to the computation of summary statistics (e.g., mean, sum, min, max) for raster data within the zones defined by vector geometries. This is a common task in spatial analysis for aggregating raster values over regions. We will use a Python library called <code class="docutils literal notranslate"><span class="pre">GeoCube</span></code> to convert vector data (e.g., GeoDataFrames) into rasterized datasets. It allows rasterization while aligning with a reference grid (such as Sentinel-2 data). Its common use case is generating gridded representations of vector data to perform spatial analyses like zonal statistics.</p>
 <p>We will use GeoCube to generate summary level zonal statistics and the older library, <code class="docutils literal notranslate"><span class="pre">rasterstats</span></code> to compute polygon level zonal statistics.</p>
 <p>Let’s start by creating a numerical class for the polygons. For this, all polygons are simply foreground, so wet set the class for all to 1.</p>
@@ -8024,10 +8001,11 @@ Data variables:
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="02_dynamic_visualization.html"
@@ -8038,7 +8016,10 @@ Data variables:
         <p class="prev-next-title">Analyzing Agricultural Fields and Temperature Patterns in India using Lonboard</p>
       </div>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -8046,7 +8027,6 @@ Data variables:
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -8086,7 +8066,6 @@ By Development Seed
   
   <div class="footer-item">
     
-
   </div>
   
   <div class="footer-item">
@@ -8106,8 +8085,8 @@ By Development Seed
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
