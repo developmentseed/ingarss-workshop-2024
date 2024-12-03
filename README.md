@@ -3,6 +3,13 @@
 Welcome to the InGARSS Workshop 2024 tutorial series. This repository contains a collection of Jupyter notebooks designed to guide you through the workshop.
 > By: [Development Seed](https://developmentseed.org/) & [SatSure](https://www.satsure.co/)
 
+## Authors
+
+- [Gajesh Ladhar - SatSure](linkedin.com/in/gajeshladhar/)
+- [Rakshith Satish - SatSure](linkedin.com/in/rakshith-sathish/)
+- [Lilly Thomas - Development Seed](linkedin.com/in/lilly-thomas-5167059a/)
+- [Soumya Ranjan Mohanty - Development Seed](linkedin.com/in/srmsoumya/)
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
