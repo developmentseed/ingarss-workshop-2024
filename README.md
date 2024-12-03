@@ -1,6 +1,7 @@
 # InGARSS Workshop 2024
 
-Welcome to the InGARSS Workshop 2024 tutorial series! This repository contains a collection of Jupyter notebooks designed to guide you through.
+Welcome to the InGARSS Workshop 2024 tutorial series. This repository contains a collection of Jupyter notebooks designed to guide you through the workshop.
+> By: [Development Seed](https://developmentseed.org/) & [SatSure](https://www.satsure.co/)
 
 ## Table of Contents
 
